@@ -257,6 +257,7 @@
             this.btnactualizar.TabIndex = 100;
             this.btnactualizar.Text = "Actualizar";
             this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // btnregresar
             // 

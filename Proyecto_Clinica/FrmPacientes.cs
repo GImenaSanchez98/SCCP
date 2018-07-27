@@ -106,5 +106,10 @@ namespace Proyecto_Clinica
         {
 
         }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

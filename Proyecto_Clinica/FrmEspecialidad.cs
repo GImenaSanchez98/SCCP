@@ -68,7 +68,44 @@ namespace Proyecto_Clinica
 
         private void btnactualizar_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text == "" || txtEspecialidad.Text == "")
 
+            {
+                MessageBox.Show("Debe de ingresar el codigo de la especialidad a modificar", "Especialidad", MessageBoxButtons.OK);
+            }
+            else
+            {
+                Clase_Conexion con = new Clase_Conexion();
+                String m;
+                con.Conectar();
+                MySqlCommand Comando = con.Conexion.CreateCommand();
+                Comando.Connection = con.Conexion;
+                try
+                {
+                    //msj.ms_ok(ComDepartamento.SelectedValue.ToString());
+                    Comando.CommandType = CommandType.StoredProcedure;
+                    Comando.CommandText = String.Format("sp_EditarEspecialidad");
+                    Comando.Parameters.AddWithValue("Codigo", String.Format("{0}", txtCodigo.Text));
+                    Comando.Parameters.AddWithValue("Descripcion", String.Format("{0}", txtEspecialidad.Text));
+
+                    Comando.Parameters.Add("msj", MySqlDbType.String).Direction = ParameterDirection.Output; Comando.ExecuteNonQuery();
+                    m = Comando.Parameters["msj"].Value.ToString();
+                    Comando.Dispose();
+                    limpiar();
+                }
+                catch (MySqlException ex)
+                {
+                    m = "Excepcion de tipo " + ex.GetType().ToString() +
+                            "\n" + ex.ToString() +
+                            " fue encontrado al ejecutar consulta.";
+                }
+                MessageBox.Show(m);
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
