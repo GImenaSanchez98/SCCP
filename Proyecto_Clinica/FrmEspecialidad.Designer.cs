@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtEspecialidad = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btninhabilitar = new System.Windows.Forms.Button();
@@ -39,21 +39,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtContraseña
+            // txtEspecialidad
             // 
-            this.txtContraseña.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.txtContraseña.Location = new System.Drawing.Point(109, 105);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(205, 28);
-            this.txtContraseña.TabIndex = 19;
+            this.txtEspecialidad.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.txtEspecialidad.Location = new System.Drawing.Point(109, 105);
+            this.txtEspecialidad.Name = "txtEspecialidad";
+            this.txtEspecialidad.Size = new System.Drawing.Size(205, 28);
+            this.txtEspecialidad.TabIndex = 19;
             // 
-            // txtUsuario
+            // txtCodigo
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.txtUsuario.Location = new System.Drawing.Point(109, 65);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(205, 28);
-            this.txtUsuario.TabIndex = 18;
+            this.txtCodigo.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.txtCodigo.Location = new System.Drawing.Point(109, 65);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(205, 28);
+            this.txtCodigo.TabIndex = 18;
             // 
             // label2
             // 
@@ -92,6 +92,7 @@
             this.btnactualizar.TabIndex = 104;
             this.btnactualizar.Text = "Actualizar";
             this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // btnregresar
             // 
@@ -110,6 +111,7 @@
             this.btnguardar.TabIndex = 102;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // label3
             // 
@@ -131,8 +133,8 @@
             this.Controls.Add(this.btnactualizar);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.btnguardar);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtEspecialidad);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmEspecialidad";
@@ -143,8 +145,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtEspecialidad;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btninhabilitar;

@@ -43,7 +43,7 @@ namespace Proyecto_Clinica
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
 
             {
-                button1.Enabled = true;
+                btnBuscar.Enabled = true;
             }
             else
             {
@@ -63,6 +63,7 @@ namespace Proyecto_Clinica
                     Comando.Parameters.AddWithValue("Direccion", String.Format("{0}", textBox4.Text));
                     Comando.Parameters.AddWithValue("Correo", String.Format("{0}", textBox5.Text));
                     Comando.Parameters.AddWithValue("Especialidad", String.Format("{0}", textBox6.Text));
+
                     //Comando.Parameters.AddWithValue("Especialidad", String.Format("{0}", textBox7.Text));
 
                     Comando.Parameters.Add("msj", MySqlDbType.String).Direction = ParameterDirection.Output; Comando.ExecuteNonQuery();
@@ -78,6 +79,11 @@ namespace Proyecto_Clinica
                 }
                 MessageBox.Show(m);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

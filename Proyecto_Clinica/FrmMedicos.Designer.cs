@@ -47,7 +47,7 @@
             this.btnregresar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox6
@@ -224,21 +224,22 @@
             this.textBox7.Size = new System.Drawing.Size(161, 28);
             this.textBox7.TabIndex = 106;
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(434, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 28);
-            this.button1.TabIndex = 107;
-            this.button1.Text = "Bus";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(434, 280);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(36, 28);
+            this.btnBuscar.TabIndex = 107;
+            this.btnBuscar.Text = "Bus";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmMedicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 405);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.btninhabilitar);
             this.Controls.Add(this.btnactualizar);
@@ -286,6 +287,6 @@
         private System.Windows.Forms.Button btnregresar;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
