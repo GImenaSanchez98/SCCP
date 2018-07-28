@@ -120,6 +120,8 @@ namespace Proyecto_Clinica
         private void btncuentas_Click(object sender, EventArgs e)
         {
             ocultarMantenimiento();
+            Usuarios nuevo = new Usuarios();
+            nuevo.ShowDialog();
         }
 
         private void btnpresentacion_Click(object sender, EventArgs e)

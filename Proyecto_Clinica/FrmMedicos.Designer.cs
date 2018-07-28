@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,42 +44,42 @@
             this.btnactualizar = new System.Windows.Forms.Button();
             this.btnregresar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.CmbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.MtxtIdentidad = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
-            // textBox5
+            // txtCorreo
             // 
-            this.textBox5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(170, 243);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(263, 28);
-            this.textBox5.TabIndex = 79;
+            this.txtCorreo.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Location = new System.Drawing.Point(170, 243);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(263, 28);
+            this.txtCorreo.TabIndex = 79;
             // 
-            // textBox4
+            // txtDireccion
             // 
-            this.textBox4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(170, 161);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(263, 74);
-            this.textBox4.TabIndex = 78;
+            this.txtDireccion.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Location = new System.Drawing.Point(170, 161);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(263, 74);
+            this.txtDireccion.TabIndex = 78;
             // 
-            // textBox3
+            // txtApellidos
             // 
-            this.textBox3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(170, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(263, 28);
-            this.textBox3.TabIndex = 77;
+            this.txtApellidos.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.Location = new System.Drawing.Point(170, 125);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(263, 28);
+            this.txtApellidos.TabIndex = 77;
             // 
-            // textBox2
+            // txtNombres
             // 
-            this.textBox2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(170, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(263, 28);
-            this.textBox2.TabIndex = 76;
+            this.txtNombres.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombres.Location = new System.Drawing.Point(170, 89);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(263, 28);
+            this.txtNombres.TabIndex = 76;
             // 
             // label9
             // 
@@ -177,6 +177,7 @@
             this.btnactualizar.TabIndex = 104;
             this.btnactualizar.Text = "Actualizar";
             this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // btnregresar
             // 
@@ -196,38 +197,39 @@
             this.btnguardar.TabIndex = 102;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // comboBox1
+            // CmbEspecialidad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(170, 285);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(263, 21);
-            this.comboBox1.TabIndex = 106;
+            this.CmbEspecialidad.FormattingEnabled = true;
+            this.CmbEspecialidad.Location = new System.Drawing.Point(170, 285);
+            this.CmbEspecialidad.Name = "CmbEspecialidad";
+            this.CmbEspecialidad.Size = new System.Drawing.Size(263, 21);
+            this.CmbEspecialidad.TabIndex = 106;
             // 
-            // maskedTextBox1
+            // MtxtIdentidad
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(170, 56);
-            this.maskedTextBox1.Mask = "0000-0000-00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(263, 20);
-            this.maskedTextBox1.TabIndex = 107;
+            this.MtxtIdentidad.Location = new System.Drawing.Point(170, 56);
+            this.MtxtIdentidad.Mask = "0000-0000-00000";
+            this.MtxtIdentidad.Name = "MtxtIdentidad";
+            this.MtxtIdentidad.Size = new System.Drawing.Size(263, 20);
+            this.MtxtIdentidad.TabIndex = 107;
             // 
             // FrmMedicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 405);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.MtxtIdentidad);
+            this.Controls.Add(this.CmbEspecialidad);
             this.Controls.Add(this.btninhabilitar);
             this.Controls.Add(this.btnactualizar);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.btnguardar);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtApellidos);
+            this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -244,10 +246,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -260,7 +262,7 @@
         private System.Windows.Forms.Button btnactualizar;
         private System.Windows.Forms.Button btnregresar;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ComboBox CmbEspecialidad;
+        private System.Windows.Forms.MaskedTextBox MtxtIdentidad;
     }
 }
