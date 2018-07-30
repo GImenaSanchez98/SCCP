@@ -27,15 +27,15 @@ namespace Proyecto_Clinica
             }
             else
             {
-                MessageBox.Show("Conexión con el servidor establecida satifactoriamente", "Conexión con el servidor", MessageBoxButtons.OK);
+               
             }
         }
 
         private void FrmSplash_MouseClick(object sender, MouseEventArgs e)
         {
+   
             FrmLogin contrasenia = new FrmLogin();
             contrasenia.Visible = true;
-            this.Hide();
         }
     }
 }

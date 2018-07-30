@@ -22,6 +22,8 @@ namespace Proyecto_Clinica
            DialogResult s =  MessageBox.Show("¿Está Seguro que desea salir del sistema?", "Confirmación", MessageBoxButtons.YesNoCancel);
             if (s == DialogResult.Yes)
             {
+                FrmSplash splash = new FrmSplash();
+                splash.Close();
                 this.Close();
             }
         }
@@ -54,11 +56,15 @@ namespace Proyecto_Clinica
         }
         private void mostrarPersonal()
         {
+            pcMedicos.Visible = true;
+            pictureBox5.Visible = true;
             btnenfermeras.Visible = true;
             btnmedicos.Visible = true;
         }
         private void ocultarPersonal()
         {
+            pcMedicos.Visible = false;
+            pictureBox5.Visible = false;
             btnenfermeras.Visible = false;
             btnmedicos.Visible = false;
         }
@@ -90,6 +96,11 @@ namespace Proyecto_Clinica
 
         private void ocultarMantenimiento()
         {
+            pictureBox11.Visible = false;
+            pictureBox10.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox8.Visible = false;
+
             btncuentas.Visible = false;
             btnpresentacion.Visible = false;
             btnespecialidad.Visible = false;
@@ -98,6 +109,11 @@ namespace Proyecto_Clinica
 
         private void mostrarMantenimiento()
         {
+            pictureBox11.Visible = true;
+            pictureBox10.Visible = true;
+            pictureBox9.Visible = true;
+            pictureBox8.Visible = true;
+
             btncuentas.Visible = true;
             btnpresentacion.Visible = true;
             btnespecialidad.Visible = true;
@@ -146,6 +162,21 @@ namespace Proyecto_Clinica
         {
             FrmAcercade nuevo = new FrmAcercade();
             nuevo.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

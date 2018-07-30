@@ -35,21 +35,24 @@
             this.btnregresar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCambio = new System.Windows.Forms.TextBox();
+            this.LbCambio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtEspecialidad
             // 
             this.txtEspecialidad.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
-            this.txtEspecialidad.Location = new System.Drawing.Point(127, 80);
+            this.txtEspecialidad.Location = new System.Drawing.Point(127, 70);
             this.txtEspecialidad.Name = "txtEspecialidad";
             this.txtEspecialidad.Size = new System.Drawing.Size(205, 28);
             this.txtEspecialidad.TabIndex = 19;
+            this.txtEspecialidad.Leave += new System.EventHandler(this.txtEspecialidad_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 85);
+            this.label2.Location = new System.Drawing.Point(60, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 17;
@@ -105,11 +108,33 @@
             this.label3.TabIndex = 106;
             this.label3.Text = "Control de Especialidades";
             // 
+            // txtCambio
+            // 
+            this.txtCambio.Enabled = false;
+            this.txtCambio.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
+            this.txtCambio.Location = new System.Drawing.Point(127, 104);
+            this.txtCambio.Name = "txtCambio";
+            this.txtCambio.Size = new System.Drawing.Size(205, 28);
+            this.txtCambio.TabIndex = 108;
+            // 
+            // LbCambio
+            // 
+            this.LbCambio.AutoSize = true;
+            this.LbCambio.Enabled = false;
+            this.LbCambio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbCambio.Location = new System.Drawing.Point(60, 109);
+            this.LbCambio.Name = "LbCambio";
+            this.LbCambio.Size = new System.Drawing.Size(68, 18);
+            this.LbCambio.TabIndex = 107;
+            this.LbCambio.Text = "Cambio:";
+            // 
             // FrmEspecialidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 221);
+            this.Controls.Add(this.txtCambio);
+            this.Controls.Add(this.LbCambio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btninhabilitar);
             this.Controls.Add(this.btnactualizar);
@@ -132,5 +157,7 @@
         private System.Windows.Forms.Button btnregresar;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCambio;
+        private System.Windows.Forms.Label LbCambio;
     }
 }

@@ -41,6 +41,7 @@
             this.btnguardar = new System.Windows.Forms.Button();
             this.btninhabilitar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtdescripcioncaducidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -187,6 +187,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Caducidad";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(234, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 28);
+            this.button1.TabIndex = 102;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(114, 60);
@@ -268,15 +278,6 @@
             this.label3.Size = new System.Drawing.Size(104, 18);
             this.label3.TabIndex = 84;
             this.label3.Text = "Presentación:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(234, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 28);
-            this.button1.TabIndex = 102;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmInvetarioMedicina
             // 

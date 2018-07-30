@@ -149,6 +149,7 @@
             this.MtxtIdentidad.Name = "MtxtIdentidad";
             this.MtxtIdentidad.Size = new System.Drawing.Size(205, 20);
             this.MtxtIdentidad.TabIndex = 118;
+            this.MtxtIdentidad.Leave += new System.EventHandler(this.MtxtIdentidad_Leave);
             // 
             // Usuarios
             // 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_Clinica
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : Form 
     {
         public FrmLogin()
         {
@@ -24,9 +24,21 @@ namespace Proyecto_Clinica
 
         private void FrmLogin_MouseClick(object sender, MouseEventArgs e)
         {
+            // solo con un click
+                    }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            FrmSplash nuevos = new FrmSplash();
             FrmMenuPrincipal nuevo = new FrmMenuPrincipal();
             this.Hide();
             nuevo.Visible = true;
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

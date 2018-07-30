@@ -168,6 +168,7 @@
             this.btninhabilitar.TabIndex = 105;
             this.btninhabilitar.Text = "Inhabilitar";
             this.btninhabilitar.UseVisualStyleBackColor = true;
+            this.btninhabilitar.Click += new System.EventHandler(this.btninhabilitar_Click);
             // 
             // btnactualizar
             // 
@@ -214,6 +215,7 @@
             this.MtxtIdentidad.Name = "MtxtIdentidad";
             this.MtxtIdentidad.Size = new System.Drawing.Size(263, 20);
             this.MtxtIdentidad.TabIndex = 107;
+            this.MtxtIdentidad.Leave += new System.EventHandler(this.MtxtIdentidad_Leave);
             // 
             // FrmMedicos
             // 

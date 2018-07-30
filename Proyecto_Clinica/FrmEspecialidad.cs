@@ -13,6 +13,7 @@ namespace Proyecto_Clinica
 {
     public partial class FrmEspecialidad : Form
     {
+        public String actualizar;
         public FrmEspecialidad()
         {
             InitializeComponent();
@@ -20,6 +21,10 @@ namespace Proyecto_Clinica
         private void limpiar()
         {
             txtEspecialidad.Text = "";
+            txtCambio.Text = "";
+            LbCambio.Enabled = false;
+            txtCambio.Enabled = false;
+            btnactualizar.Text = "Actualizar";
             txtEspecialidad.Focus();
 
         }
@@ -34,23 +39,48 @@ namespace Proyecto_Clinica
             }
             else
             {
-                cargar_datos("sp_AgregarEspecialidad");
+                Clase_Conexion con = new Clase_Conexion();
+                String m;
+                con.Conectar();
+                MySqlCommand Comando = con.Conexion.CreateCommand();
+                Comando.Connection = con.Conexion;
+                try
+                {
+                    //msj.ms_ok(ComDepartamento.SelectedValue.ToString());
+                    Comando.CommandType = CommandType.StoredProcedure;
+                    Comando.CommandText = String.Format("sp_AgregarEspecialidad");
+                    Comando.Parameters.AddWithValue("Especialidad", String.Format("{0}", txtEspecialidad.Text));
+
+                    Comando.Parameters.Add("msj", MySqlDbType.String).Direction = ParameterDirection.Output; Comando.ExecuteNonQuery();
+                    m = Comando.Parameters["msj"].Value.ToString();
+                    Comando.Dispose();
+                    limpiar();
+                }
+                catch (MySqlException ex)
+                {
+                    m = "Excepcion de tipo " + ex.GetType().ToString() +
+                            "\n" + ex.ToString() +
+                            " fue encontrado al ejecutar consulta.";
+                }
+                MessageBox.Show(m);
             }
         }
 
-        public void cargar_datos(string s)
+        private void cargar_datos(string s)
         {
             Clase_Conexion con = new Clase_Conexion();
             String m;
             con.Conectar();
             MySqlCommand Comando = con.Conexion.CreateCommand();
+            MySqlTransaction Transacsion;
+            Transacsion = con.Conexion.BeginTransaction();
             Comando.Connection = con.Conexion;
             try
             {
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.CommandText = String.Format(s);
                 Comando.Parameters.AddWithValue("Especialidad", String.Format("{0}", txtEspecialidad.Text));
-              
+
                 Comando.Parameters.Add("msj", MySqlDbType.String).Direction = ParameterDirection.Output; Comando.ExecuteNonQuery();
                 m = Comando.Parameters["msj"].Value.ToString();
                 Comando.Dispose();
@@ -68,20 +98,71 @@ namespace Proyecto_Clinica
 
         private void btnactualizar_Click(object sender, EventArgs e)
         {
-            DialogResult s;
-            s = MessageBox.Show("¿Está Seguro que desea guardar los datos?", "Control de Especialidades", MessageBoxButtons.YesNo);
-            if (s == DialogResult.Yes)
+            if (btnactualizar.Text == "Actualizar")
             {
-                cargar_datos("sp_EditarEspecialidad");
-
+                btnactualizar.Text = "Guardar";
+                LbCambio.Enabled = true;
+                txtCambio.Enabled = true;
             }
-            else
+            else //si es igual a guardar
             {
-                limpiar();
+                if (btnactualizar.Text == "Guardar")
+                {
+                    if (txtCambio.Text == "")
+                    {
+                        MessageBox.Show("Revise, hay datos importantes sin llenar", "Control de especialidades", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        DialogResult s;
+                        s = MessageBox.Show("¿Está Seguro que desea guardar los datos?", "Control de especialidades", MessageBoxButtons.YesNo);
+                        if (s == DialogResult.Yes)
+                        {
+                            Cargar_Datos("sp_EditarEspecialidad");
+
+                        }
+                        else
+                        {
+                            limpiar();
+                        }
+                    }
+                }
             }
         }
 
-       
+        //solo para actualizar
+        private void Cargar_Datos(string s)
+        {
+            Clase_Conexion con = new Clase_Conexion();
+            String m;
+            con.Conectar();
+            MySqlCommand Comando = con.Conexion.CreateCommand();
+            Comando.Connection = con.Conexion;
+            try
+            {
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = String.Format(s);
+                Comando.Parameters.AddWithValue("Especialidad", String.Format("{0}", txtEspecialidad.Text));
+                Comando.Parameters.AddWithValue("Cambio", String.Format("{0}", txtCambio.Text));
+                Comando.Parameters.AddWithValue("Codigo", String.Format("{0}", actualizar));
+
+                Comando.Parameters.Add("msj", MySqlDbType.String).Direction = ParameterDirection.Output; Comando.ExecuteNonQuery();
+                m = Comando.Parameters["msj"].Value.ToString();
+                Comando.Dispose();
+                limpiar();
+                btnguardar.Enabled = true;
+            }
+            catch (MySqlException ex)
+            {
+                m = "Excepcion de tipo " + ex.GetType().ToString() +
+                        "\n" + ex.ToString() +
+                        " fue encontrado al ejecutar consulta.";
+            }
+            MessageBox.Show(m);
+
+        }
+
+
         private void btninhabilitar_Click(object sender, EventArgs e)
         {
             DialogResult s;
@@ -102,5 +183,24 @@ namespace Proyecto_Clinica
         {
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtEspecialidad_TextChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEspecialidad_Leave(object sender, EventArgs e)
+        {
+        }
     }
-    }
+}
