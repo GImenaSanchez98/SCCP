@@ -110,23 +110,23 @@
             // 
             // txtCambio
             // 
-            this.txtCambio.Enabled = false;
             this.txtCambio.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F);
             this.txtCambio.Location = new System.Drawing.Point(127, 104);
             this.txtCambio.Name = "txtCambio";
             this.txtCambio.Size = new System.Drawing.Size(205, 28);
             this.txtCambio.TabIndex = 108;
+            this.txtCambio.Visible = false;
             // 
             // LbCambio
             // 
             this.LbCambio.AutoSize = true;
-            this.LbCambio.Enabled = false;
             this.LbCambio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbCambio.Location = new System.Drawing.Point(60, 109);
             this.LbCambio.Name = "LbCambio";
             this.LbCambio.Size = new System.Drawing.Size(68, 18);
             this.LbCambio.TabIndex = 107;
             this.LbCambio.Text = "Cambio:";
+            this.LbCambio.Visible = false;
             // 
             // FrmEspecialidad
             // 

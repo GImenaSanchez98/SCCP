@@ -22,8 +22,8 @@ namespace Proyecto_Clinica
         {
             txtEspecialidad.Text = "";
             txtCambio.Text = "";
-            LbCambio.Enabled = false;
-            txtCambio.Enabled = false;
+            LbCambio.Visible = false;
+            txtCambio.Visible = false;
             btnactualizar.Text = "Actualizar";
             txtEspecialidad.Focus();
 
@@ -101,8 +101,8 @@ namespace Proyecto_Clinica
             if (btnactualizar.Text == "Actualizar")
             {
                 btnactualizar.Text = "Guardar";
-                LbCambio.Enabled = true;
-                txtCambio.Enabled = true;
+                LbCambio.Visible = true;
+                txtCambio.Visible = true;
             }
             else //si es igual a guardar
             {

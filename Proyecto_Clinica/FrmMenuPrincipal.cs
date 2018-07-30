@@ -22,9 +22,9 @@ namespace Proyecto_Clinica
            DialogResult s =  MessageBox.Show("¿Está Seguro que desea salir del sistema?", "Confirmación", MessageBoxButtons.YesNoCancel);
             if (s == DialogResult.Yes)
             {
-                FrmSplash splash = new FrmSplash();
-                splash.Close();
                 this.Close();
+                FrmSplash splash = new FrmSplash();
+                splash.Show();
             }
         }
 
@@ -175,6 +175,11 @@ namespace Proyecto_Clinica
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
         {
 
         }
